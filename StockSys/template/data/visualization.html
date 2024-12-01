@@ -1,0 +1,35 @@
+<form method="post" action="{% url 'add_stock_data' stock_name %}">
+    {% csrf_token %}
+    <label for="trade_date">Trade Date:</label>
+    <input type="text" id="trade_date" name="trade_date" required>
+    <label for="open">Open:</label>
+    <input type="number" id="open" name="open" required>
+    <label for="high">High:</label>
+    <input type="number" id="high" name="high" required>
+    <label for="low">Low:</label>
+    <input type="number" id="low" name="low" required>
+    <label for="close">Close:</label>
+    <input type="number" id="close" name="close" required>
+    <label for="pre_close">Pre Close:</label>
+    <input type="number" id="pre_close" name="pre_close" required>
+    <label for="change">Change:</label>
+    <input type="number" id="change" name="change" required>
+    <label for="pct_chg">Pct Chg:</label>
+    <input type="number" id="pct_chg" name="pct_chg" required>
+    <label for="vol">Vol:</label>
+    <input type="number" id="vol" name="vol" required>
+    <label for="amount">Amount:</label>
+    <input type="number" id="amount" name="amount" required>
+    <input type="submit" value="Add">
+  </form>
+  
+  <form method="post" action="{% url 'delete_stock_data' stock_name trade_date %}">
+    {% csrf_token %}
+    <label for="trade_date">Trade Date:</label>
+    <input type="text" id="trade_date" name="trade_date" required>
+    <input type="submit" value="Delete">
+  </form>
+
+
+  
+  

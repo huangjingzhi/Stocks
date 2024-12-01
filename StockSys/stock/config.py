@@ -1,0 +1,1 @@
+ST_DB_NAME = "stocks"

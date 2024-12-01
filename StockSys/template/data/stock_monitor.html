@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ stock_name }}股票数据监控</h2>
+<table>
+    <tr>
+        <td>日期：</td>
+        <td>{{ latest_data.trade_date }}</td>
+    </tr>
+    <tr>
+        <td>开盘价：</td>
+        <td>{{ latest_data.open }}</td>
+    </tr>
+    <tr>
+        <td>最高价：</td>
+        <td>{{ latest_data.high }}</td>
+    </tr>
+    <tr>
+        <td>最低价：</td>
+        <td>{{ latest_data.low }}</td>
+    </tr>
+    <tr>
+        <td>收盘价：</td>
+        <td>{{ latest_data.close }}</td>
+    </tr>
+    <tr>
+        <td>涨跌额：</td>
+        <td>{{ latest_data.change }}</td>
+    </tr>
+    <tr>
+        <td>涨跌幅：</td>
+        <td>{{ latest_data.pct_chg }}%</td>
+    </tr>
+</table>
+{% if warning %}
+<p style="color:red;">{{ warning }}</p>
+{% endif %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container">
+    <h1>{% if stock.id %}Update{% else %}Create{% endif %} Stock</h1>
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-primary">{% if stock.id %}Update{% else %}Create{% endif %}</button>
+    </form>
+  </div>
+{% endblock %}
